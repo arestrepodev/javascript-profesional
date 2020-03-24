@@ -1,10 +1,10 @@
 {
-  "name": "Media Player - Platzi",
+  "name": "media-player-platzi",
   "version": "1.0.0",
   "description": "Javascript Profesional Course - Project",
   "main": "index.js",
   "scripts": {
-    "start": "liver-server"
+    "start": "live-server"
   },
   "repository": {
     "type": "git",
