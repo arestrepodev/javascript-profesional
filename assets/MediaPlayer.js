@@ -1,16 +1,34 @@
-function MediaPlayer(config) {
-  this.media = config.el;
-  this.paused = true;
+class MediaPlayer {
+  constructor(config) {
+    this.media = config.el;
+    this.paused = true;
+    this.plugins = config.plugins || [];
+    this._initPlugins();
+  }
 
-  MediaPlayer.prototype.play = function() {
+  _initPlugins = function() {
+    this.plugins.forEach(plugin => {
+      plugin.run(this);
+    });
+  };
+
+  play = function() {
     this.media.play();
   };
 
-  MediaPlayer.prototype.pause = function() {
+  pause = function() {
     this.media.pause();
   };
 
-  MediaPlayer.prototype.togglePlay = function() {
+  muted = function() {
+    this.media.muted = true;
+  };
+
+  unmuted = function() {
+    this.media.muted = false;
+  };
+
+  togglePlay = function() {
     if (this.media.paused) {
       this.play();
     } else {
