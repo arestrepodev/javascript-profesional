@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <title>Prototype</title>
+  </head>
+
+  <body>
+    <a href="/exercices/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <script>
+      // Un objeto normal y corriente
+      // const zelda = {
+      //   name: 'Zelda',
+      // };
+
+      // zelda.saludar = function () {
+      //   console.log(`Hola soy ${this.name}`);
+      // };
+
+      // zelda.saludar();
+
+      // Una forma más fácil
+      // function Hero(name) {
+      //   const hero = {
+      //     name: name,
+      //   };
+
+      //   hero.saludar = function () {
+      //     console.log(`Hola soy ${this.name}`);
+      //   };
+
+      //   return hero;
+      // }
+
+      // const zelda = Hero('zelda');
+      // zelda.saludar();
+
+      // const Link = Hero('Link');
+      // Link.saludar();
+
+      // Otra forma más eficiente
+      // const heroMethods = {
+      //   saludar: function () {
+      //     console.log(`Hola soy ${this.name}`);
+      //   },
+      // };
+
+      // function Hero(name) {
+      //   const hero = {
+      //     name: name,
+      //   };
+      //   hero.saludar = heroMethods.saludar;
+      //   return hero;
+      // }
+
+      // const zelda = Hero('zelda');
+      // zelda.saludar();
+
+      // const Link = Hero('Link');
+      // Link.saludar();
+
+      // Object.create
+      // const heroMethods = {
+      //   saludar: function () {
+      //     console.log(`Hola soy ${this.name}`);
+      //   },
+      // };
+
+      // function Hero(name) {
+      //   const hero = Object.create(heroMethods);
+      //   hero.name = name;
+      //   return hero;
+      // }
+
+      // const zelda = Hero('zelda');
+      // zelda.saludar();
+
+      // const Link = Hero('Link');
+      // Link.saludar();
+
+      // Los métodos de hero dentro de hero
+      // const heroMethods = {
+      //   saludar: function () {
+      //     console.log(`Hola soy ${this.name}`);
+      //   },
+      // };
+
+      // function Hero(name) {
+      //   const hero = Object.create(Hero.prototype);
+      //   hero.name = name;
+      //   return hero;
+      // }
+
+      // Hero.prototype.saludar = function () {
+      //   console.log(`Hola soy ${this.name}`);
+      // };
+
+      // const zelda = Hero('zelda');
+      // zelda.saludar();
+
+      // const Link = Hero('Link');
+      // Link.saludar();
+
+      // New es un atajo (azucar sintáctica) para Object.create
+      function Hero(name) {
+        // const hero = Object.create(Hero.prototype);
+        this.name = name;
+      }
+
+      Hero.prototype.saludar = function () {
+        console.log(`Hola soy ${this.name}`);
+      };
+
+      const zelda = new Hero('zelda');
+      zelda.saludar();
+
+      const Link = new Hero('Link');
+      Link.saludar();
+    </script>
+  </body>
+</html>
