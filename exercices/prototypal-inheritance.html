@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototypal Inheritance</title>
+  </head>
+  <body>
+    <a href="/exercices/">Go back</a>
+    <p><em>Abre la consola</em></p>
+    <script>
+      function Hero(name) {
+        // const hero = Object.create(Hero.prototype);
+        this.name = name;
+      }
+
+      Hero.prototype.saludar = function () {
+        console.log(`Hola soy ${this.name}`);
+      };
+
+      const zelda = new Hero('zelda');
+      zelda.saludar();
+
+      // Propiedades de la Instancia
+      console.log('Name:', zelda.name);
+
+      // Propiedades de la "Clase"
+      console.log('Saludar', zelda.saludar);
+
+      // Propiedades heredadas ej: toString();
+      console.log('toString', zelda.toString);
+
+      // hasOwnProperty (De donde es la propiedad)
+      console.log(
+        'Find Property in Prototype Chain:',
+        zelda.hasOwnProperty('name')
+      );
+    </script>
+  </body>
+</html>
