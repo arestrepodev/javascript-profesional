@@ -149,5 +149,8 @@ Se usa en:
 - Linters: ESLint, Prettify
 - Type Checkers: TypeScript, Flow
 - Syntax Highlighters
-  
+
+### Ejemplo de como se usa el AST
+
+[Ejemplo de AST con ESLint](https://astexplorer.net/#/gist/16fc27fc420f705455f2b42b6c804aa1/53cf94b7c80d6c221ee893ca3b93a4d21844bffa)
 
