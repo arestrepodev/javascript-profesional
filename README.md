@@ -2,6 +2,8 @@
 
 ## Project: Media Player - Platzi
 
+# Fundamentos de JavaScript
+
 #### Cómo llega un script al navegador
 
 El **DOM** es la representación que hace el navegador de un documento HTML.
@@ -87,3 +89,65 @@ Por default los objetos en JavaScript tienen cómo prototipo a **Object** que es
 Cuando se llama a una función o variable que no se encuentra en el mismo objeto que la llamó, se busca en toda la prototype chain hasta encontrarla o regresar undefined.
 
 La función hasOwnProperty sirve para verificar si una propiedad es parte del objeto o si viene heredada desde su **prototype chain**.
+
+# ¿Como Funciona Javascript?
+
+## Parsers
+
+- _JavaScript es Interpretado_
+- _La web no es como antes_
+
+## ¿Qué hace un JS Engine?
+
+- Recibe **código fuente**
+- **Parsea el código** y produce un **Abstract Syntax Tree (AST)**
+- Se compila a **bytecode** y se **ejecuta**
+- Se optimiza a **machine code** y se **reemplaza al código base**
+
+### JavaScript Engine Grafo:
+
+![Javascript Engine Grafo](images/javascript-engine-grafo.png)
+
+
+### ¿Qué hace un Parser?
+
+![Javascript Engine Grafo](images/what-does-a-parser.png)
+
+### Google Dice:
+
+- **Parsing** es **15-20%** del proceso de ejecución
+- La **mayoría** del código JavaScript de una página nunca se ejecuta
+- Esto hace que un **bundling y code splitting** sean muy importantes 
+
+## Parser de V8
+
+### Eager Parsing:
+
+- Encuentra códigos de Sintaxis
+- Crea el **AST**
+- Construye Scopes
+
+### Lazy Parsing:
+
+- Doble de rápido que el eager parsing
+- No crea el AST
+- Construye los scopes Parcialmente
+
+## Demo Tokens
+
+[Ejemplo de Demo Tokens](https://esprima.org/demo/parse.html#)
+
+## Abstract Syntax Tree (AST)
+
+Es un grafo (estructura de datos) que representa un programa:
+
+Se usa en:
+
+- JavaScript Engine
+- Bundlers: Webpack, Rollup, Parcel
+- Transpilers: Babel
+- Linters: ESLint, Prettify
+- Type Checkers: TypeScript, Flow
+- Syntax Highlighters
+  
+
