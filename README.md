@@ -108,7 +108,6 @@ La función hasOwnProperty sirve para verificar si una propiedad es parte del ob
 
 ![Javascript Engine Grafo](images/javascript-engine-grafo.png)
 
-
 ### ¿Qué hace un Parser?
 
 ![Javascript Engine Grafo](images/what-does-a-parser.png)
@@ -117,7 +116,7 @@ La función hasOwnProperty sirve para verificar si una propiedad es parte del ob
 
 - **Parsing** es **15-20%** del proceso de ejecución
 - La **mayoría** del código JavaScript de una página nunca se ejecuta
-- Esto hace que un **bundling y code splitting** sean muy importantes 
+- Esto hace que un **bundling y code splitting** sean muy importantes
 
 ## Parser de V8
 
@@ -154,3 +153,47 @@ Se usa en:
 
 [Ejemplo de AST con ESLint](https://astexplorer.net/#/gist/16fc27fc420f705455f2b42b6c804aa1/53cf94b7c80d6c221ee893ca3b93a4d21844bffa)
 
+## ¿Cómo funciona JavaScript Engine?
+
+![Javascript Engine Grafo](images/javascript-engine-grafo.png)
+
+- Una vez tenemos el **AST** ahora hay que convertirlo a Bytecode.
+
+- **Bytecode** es como el **código assembler** pero en lugar de operar en el procesador opera en la máquina virtual V8 del navegador.
+
+- **Machine code** es el más bajo nivel, es código binario que va directo al procesador.
+
+- **El profiler** se sitúa en medio del bytecode y el optimizador
+
+- Cada máquina virtual tiene sus particularidades, por ejemplo V8 tiene algo llamado Hot Functions.
+
+- Cuando una sentencia función es ejecutada muy frecuentemente, V8 la denomina como una hot function y hace una optimización que consiste en convertirla a machine code para no tener que interpretarla de nuevo y agilizar su ejecución.
+
+### Bytecode:
+
+- Bytecode es parecido a assembly
+- Es portatil
+- Ejecutado por virtual machine
+
+### Machine Code:
+
+- Binario
+- Instrucciones específicas a una arquitectura o a un procesador
+
+## Cada navegador tiene su implementación de JavaScript Engine:
+
+### v8 - Google:
+
+![v8 Google](images/v8.png)
+
+### SpiderMonkey - Firefox:
+
+![SpiderMonkey Firefox](images/spidermonkey.png)
+
+### Chackra - Edge:
+
+![Chackra Edge](images/chackra.png)
+
+### JavaScriptCore - Safari:
+
+![Chackra Edge](images/javascriptCore.png)
