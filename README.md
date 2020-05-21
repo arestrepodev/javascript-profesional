@@ -215,3 +215,16 @@ Javascript se organiza usando las siguientes estructuras de datos:
 - **MicroTask Queue** Aquí se agregan las promesas. Esta Queue es la que tiene mayor prioridad.
 
 El Event Loop es un loop que está ejecutando todo el tiempo y pasa periódicamente revisando las queues y el stack moviendo tareas entre estas dos estructuras.
+
+# Fundamentos Intermedios
+
+## Promesas
+
+Para crear las promesas usamos la clase Promise. El constructor de Promise recibe un sólo argumento, un callback con dos parámetros, **resolve** y **reject** resolve es la función a ejecutar cuando se resuelve y reject cuando se rechaza.
+
+- El **async/await** es sólo **syntax sugar** de una promesa, por debajo es exactamente lo mismo.
+
+- La clase Promise tiene algunos métodos estáticos bastante útiles:
+
+  - **Promise.all** Da error si una de las promesas es rechazada.
+  - **Promise.race** Regresa sólo la promesa que se resuelva primero.
